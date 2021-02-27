@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "esModuleInterop": true,  
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+      "lib": ["es5", "es6"],
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
