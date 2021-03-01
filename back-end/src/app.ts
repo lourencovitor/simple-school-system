@@ -1,15 +1,14 @@
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
+
 import routes from './routes';
-import dotenv from 'dotenv';
 
 class App {
   public express: express.Application;
 
   public constructor() {
-    dotenv.config();
-
     this.express = express();
+
     this.middlewares();
     this.routes();
   }

@@ -3,13 +3,14 @@ import * as Knex from 'knex';
 export async function up(knex: Knex): Promise<void> {
   await knex.schema.createTable('users', (table) => {
     table.increments('id');
+    table.uuid('secure_id');
     table.string('name');
     table.string('email');
     table.string('password');
     table.string('rg');
     table.string('cpf');
-    table.date('date_of_birth');
-    table.string('phone_number');
+    table.date('dateOfBirth');
+    table.string('phoneNumber');
     table.enum('gender', ['M', 'F', 'O']);
 
     table.unique(['email', 'rg', 'cpf']);
@@ -21,5 +22,5 @@ export async function up(knex: Knex): Promise<void> {
 }
 
 export async function down(knex: Knex): Promise<void> {
-  knex.schema.dropTable('users');
+  knex.schema.dropSchema('users');
 }
